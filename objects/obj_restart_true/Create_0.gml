@@ -14,7 +14,6 @@ aspectminrescale = 160
 width_aspect = 4
 height_aspect = 3
 
-
 var __widthaspect = width_aspect * aspectminrescale
 var __heightaspect = height_aspect * aspectminrescale
 

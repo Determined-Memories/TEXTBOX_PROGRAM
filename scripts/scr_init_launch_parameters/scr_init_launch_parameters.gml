@@ -6,7 +6,6 @@ function scr_init_launch_parameters(){
 	var p_num = parameter_count()
 	
 	if OverrideParams {
-		if true {
 			var param_overrides = ["text", "darkbox", "face", "boxheight", "images", "emotion", "generate"]
 			var argument_overrides = [
 			"* Lorem ipsum dolor sit#amet, consectetur#adipiscing elit, sed#do eiusmod tempor#incidunt ut labore et#dolore magna aliqua.#Ut enim ad minim#veniam, quis nostrum#exercitationem ullamco#laboriosam, nisi ut#aliquid ex ea commodi#consequatur. Duis aute#irure reprehenderit in#voluptate velit esse#cillum dolore eu#fugiat nulla pariatur.#Excepteur sint#obcaecat cupiditat non#proident, sunt in#culpa qui officia#deserunt mollit anim#id est laborum.#", 
@@ -24,7 +23,6 @@ function scr_init_launch_parameters(){
 					}
 				}
 			}
-		}
 	} else
 	if (p_num > 0) for (var i = 0; i < p_num; i += 1) {
 		var param = parameter_string(i + 1)

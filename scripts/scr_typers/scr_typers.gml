@@ -1,4 +1,4 @@
-function scr_typers(typeid){
+function scr_typers(typeid){ // Not Implemented
 	special = 0
 	font = fnt_main
 	draw_originalcolor = c_white

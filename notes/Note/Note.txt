@@ -1,0 +1,53 @@
+Assets that are heavily Modified Versions of Deltarune things:
+scr_init_launch_parameters
+scr_dialoguebox (DELTARUNE scr_dbox)
+scr_darkbox
+
+spr_face_asgore
+spr_face_sans
+
+obj_restart_true (I'm counting this because there is small parts of reused Deltarune code in here, and it is also reusing a object name from Deltarune)
+
+Assets that are Deltarune Things:
+spr_face_berdly
+spr_face_bratty
+spr_face_burgerpants
+spr_face_catty
+spr_face_king
+spr_face_l0
+spr_face_placeholder
+spr_face_queen
+spr_face_rurus
+spr_face_susie_alt
+spr_face_undyne
+spr_face_r_dark
+spr_face_r_hood
+spr_face_r_nohat
+spr_face_carol
+spr_face_n_matome
+spr_face_rudy
+
+spr_textbox_left
+spr_textbox_top
+spr_textbox_topleft
+spr_pxwhite
+spr_heart_centered
+
+snd_error
+snd_smallswing
+snd_select
+snd_menumove
+
+fnt_comicsans
+fnt_dotumche
+fnt_main
+fnt_mainbig
+fnt_small
+fnt_tinynoelle
+fnt_ja_comicsans
+fnt_ja_dotumche
+fnt_ja_kakugo
+fnt_ja_main
+fnt_ja_mainbig
+fnt_ja_small
+fnt_ja_tinynoelle

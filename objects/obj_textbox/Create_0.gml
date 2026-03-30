@@ -206,7 +206,8 @@ facespriteinternalnames = {
 		"king": "King",
 		"queen": "Queen",
 		"burgerpants": "Pants [Burger Edition]",
-		"asgore": "Asgore [Sprites Combined]"
+		"asgore": "Asgore [Sprites Combined]",
+		"sans": "sans [combined]",
 	}
 
 _checkforifblacklisted = function(sprite) {

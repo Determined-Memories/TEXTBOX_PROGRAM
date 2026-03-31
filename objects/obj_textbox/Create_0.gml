@@ -322,11 +322,13 @@ scr_drawbox = function(x, y) {
 			i += 2
 			letter = string_char_at(_str, i)
 			try {
-				_customdraw_additional = real(letter)
+				if string_digits(letter) == letter {
+					_customdraw_additional = real(letter)
 				
-				_customdraw = function() {
+					_customdraw = function() {
 					
-				}
+					}
+				} else i--
 			}
 		})
 		

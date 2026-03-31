@@ -1,4 +1,4 @@
-#macro OverrideParams false
+#macro OverrideParams 1
 
 function scr_init_launch_parameters(){
 	var param_data = new launch_parameters()
@@ -6,9 +6,10 @@ function scr_init_launch_parameters(){
 	var p_num = parameter_count()
 	
 	if OverrideParams {
-			var param_overrides = ["text", "darkbox", "face", "boxheight", "images", "emotion", "generate"]
+			var param_overrides = ["text_base32", "darkbox", "face", "boxheight", "images", "emotion", "generate"]
 			var argument_overrides = [
-			"* Lorem ipsum dolor sit#amet, consectetur#adipiscing elit, sed#do eiusmod tempor#incidunt ut labore et#dolore magna aliqua.#Ut enim ad minim#veniam, quis nostrum#exercitationem ullamco#laboriosam, nisi ut#aliquid ex ea commodi#consequatur. Duis aute#irure reprehenderit in#voluptate velit esse#cillum dolore eu#fugiat nulla pariatur.#Excepteur sint#obcaecat cupiditat non#proident, sunt in#culpa qui officia#deserunt mollit anim#id est laborum.#", 
+			base64_encode("\"SANS IS NESS\" said &\"I AM NOT TOBY FOX!\""),
+			//"* Lorem ipsum dolor sit#amet, consectetur#adipiscing elit, sed#do eiusmod tempor#incidunt ut labore et#dolore magna aliqua.#Ut enim ad minim#veniam, quis nostrum#exercitationem ullamco#laboriosam, nisi ut#aliquid ex ea commodi#consequatur. Duis aute#irure reprehenderit in#voluptate velit esse#cillum dolore eu#fugiat nulla pariatur.#Excepteur sint#obcaecat cupiditat non#proident, sunt in#culpa qui officia#deserunt mollit anim#id est laborum.#", 
 			""/*Darkbox*/, "n_matome"/*Face*/, "a"/*boxheight (auto)*/, "__temppfp_debugtest.png,__tempimg_debugtest.png" /*INCOMPLETE*/, "10"/*Emotion*/, @"D:\Test\TEXTBOX\TESTBOX"/*Generate (PATH)*/]
 			for (var i = 0; i < array_length(param_overrides); ++i) {
 				paramname = param_overrides[i]
@@ -171,7 +172,8 @@ function launch_parameter_conversions() constructor {
 											quit		=			function(input)		{	customargument_autoquit						= true															}
 											generate	=			function(input)		{	customargument_autogenerate					= string(input)													}
 											text		=			function(input)		{	if input != "" customargument_settext		= input															}
-											face		=			function(input)		{	if input != "" __processfaceinput(input)																						}
+											text_base32	=			function(input)		{	if input != "" customargument_settext		= base64_decode(input)											}
+											face		=			function(input)		{	if input != "" __processfaceinput(input)																	}
 											emotion		=			function(input)		{	if input != "" customargument_setemotion	= input															}
 											darkbox		=			function(input)		{	customargument_darkbox = true	if string_digits(input) == input && input != "" customargument_darkboxframe = real(input)																			}
 											boxwidth	=			function(input)		{	try { customargument_setwidth = real(input) } catch (ex) {}													}

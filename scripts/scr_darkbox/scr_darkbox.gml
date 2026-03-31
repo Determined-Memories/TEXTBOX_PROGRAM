@@ -22,9 +22,9 @@ function scr_darkbox(x1, y1, x2, y2, size = 2){
 	
 	var __32scaled = 16*size
 	
-	var topspr		= spr_textbox_top
-	var leftspr		= spr_textbox_left
-	var topleftspr	= spr_textbox_topleft
+	var topspr		= darkboxtopsprite
+	var leftspr		= darkboxleftsprite
+	var topleftspr	= darkboxtopleftsprite
 	
 	if (textbox_width > 0) {
 		draw_sprite_stretched(topspr, 0, x1 + __32scaled, y1, textbox_width, __32scaled)

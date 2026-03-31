@@ -6,7 +6,7 @@ function scr_init_launch_parameters(){
 	var p_num = parameter_count()
 	
 	if OverrideParams {
-			var param_overrides = ["text_base32", "darkbox", "face", "boxheight", "images", "emotion", "generate"]
+			var param_overrides = ["text_base64", "darkbox", "face", "boxheight", "images", "emotion", "generate"]
 			var argument_overrides = [
 			base64_encode("\"SANS IS NESS\" said &\"I AM NOT TOBY FOX!\""),
 			//"* Lorem ipsum dolor sit#amet, consectetur#adipiscing elit, sed#do eiusmod tempor#incidunt ut labore et#dolore magna aliqua.#Ut enim ad minim#veniam, quis nostrum#exercitationem ullamco#laboriosam, nisi ut#aliquid ex ea commodi#consequatur. Duis aute#irure reprehenderit in#voluptate velit esse#cillum dolore eu#fugiat nulla pariatur.#Excepteur sint#obcaecat cupiditat non#proident, sunt in#culpa qui officia#deserunt mollit anim#id est laborum.#", 
@@ -172,7 +172,7 @@ function launch_parameter_conversions() constructor {
 											quit		=			function(input)		{	customargument_autoquit						= true															}
 											generate	=			function(input)		{	customargument_autogenerate					= string(input)													}
 											text		=			function(input)		{	if input != "" customargument_settext		= input															}
-											text_base32	=			function(input)		{	if input != "" customargument_settext		= base64_decode(input)											}
+											text_base64	=			function(input)		{	if input != "" customargument_settext		= base64_decode(input)											}
 											face		=			function(input)		{	if input != "" __processfaceinput(input)																	}
 											emotion		=			function(input)		{	if input != "" customargument_setemotion	= input															}
 											darkbox		=			function(input)		{	customargument_darkbox = true	if string_digits(input) == input && input != "" customargument_darkboxframe = real(input)																			}

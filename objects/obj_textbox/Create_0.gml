@@ -482,10 +482,7 @@ if global.launch_arguments.customargument_scale != -1													Scale =				cla
 if global.launch_arguments.customargument_setwidth > 0													boxwidth =				 (global.launch_arguments.customargument_setwidth)
 if global.launch_arguments.customargument_setheight > 0 || global.launch_arguments.customargument_setheight == -2				{
 	if global.launch_arguments.customargument_setheight == -2 {
-		var lines = array_length(string_split_ext(text, ["\n", "&", "#"]))
-		show_debug_message(lines)
-		var stringheight = ((lines) * (spacingheight/Scale)) + (16)
-		boxheight = clamp(stringheight, 70, 0xFFFFFF)
+		_automaticallycalculateboxheight()
 	} else boxheight = (global.launch_arguments.customargument_setheight)
 }
 if global.launch_arguments.customargument_setfont != -1													font =					 (global.launch_arguments.customargument_setfont)
@@ -497,4 +494,11 @@ if global.launch_arguments.customargument_autogenerate != false											scr_ge
 if global.launch_arguments.customargument_autoquit {
 	show_debug_message("AUTOQUITTING.")
 	game_end()
+}
+
+_automaticallycalculateboxheight = function() {
+	var lines = array_length(string_split_ext(text, ["\n", "&", "#"]))
+	show_debug_message(lines)
+	var stringheight = ((lines) * (spacingheight/Scale)) + (16)
+	boxheight = clamp(stringheight, 70, 0xFFFFFF)
 }

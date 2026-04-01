@@ -62,7 +62,10 @@ switch string_lower(currentdirectory) {
 	options = [ 
 		{name: "DrawBoxInConfigToggle",					func: function() { DrawBoxInConfig = !DrawBoxInConfig }},
 		{name: "BoxWidth:" + string(boxwidth),			func: function() { boxwidth = get_integer("BoxWidth", boxwidth) }},
-		{name: "BoxHeight:" + string(boxheight),		func: function() { boxheight = get_integer("BoxWidth", boxheight) }},
+		{name: "BoxHeight:" + string(boxheight),		func: function() { 
+			boxheight = get_integer("BoxHeight [Use -2 for it to set it to a size that hopefully fits perfectly]", boxheight) 
+			if boxheight == -2 _automaticallycalculateboxheight()
+			}},
 		
 		// Mono [Regions don't work in here lol]
 		{name: "MonoToggle",							func: function() { autospace = !autospace }
@@ -204,6 +207,10 @@ draw_set_halign(fa_left)
 gpu_set_blendmode(bm_subtract)
 draw_rectangle_color(-10, room_height - 100, room_width, room_height, c_black, c_black, c_white, c_white, false)
 gpu_set_blendmode(bm_normal)
+
+if keyboard_check(ord("V")) boxvisible = false
+
+
 if boxvisible {
 	var visx = boxdrawx - ((boxwidth*f) / 2)
 	var visy = boxdrawy - ((boxheight*f) / 2)

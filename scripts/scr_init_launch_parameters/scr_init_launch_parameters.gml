@@ -1,4 +1,4 @@
-#macro OverrideParams 1
+#macro OverrideParams 0
 
 function scr_init_launch_parameters(){
 	var param_data = new launch_parameters()

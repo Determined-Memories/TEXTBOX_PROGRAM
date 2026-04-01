@@ -278,7 +278,10 @@ scr_generate = function(fname, frames = 1, startframe = 0) {
 
 scr_drawbox = function(x, y) {
 	draw_set_alpha(1)
-	scr_dbox(darkmode, false, x, y, (boxwidth - real(darkmode)), (boxheight - real(darkmode)), Scale - 1)
+	var dboxargument_width = (boxwidth - real(darkmode))
+	var dboxargument_height = (boxheight - real(darkmode))
+	scr_dbox(darkmode, false, x, y, dboxargument_width, dboxargument_height, Scale - 1)
+	
 	draw_set_font(asset_get_index(font))
 	draw_set_color(c_white)
 	// writer.x + (8 * f), writer.y + (5 * f)
@@ -405,6 +408,11 @@ scr_drawbox = function(x, y) {
 		for (var i = 0; i < array_length(_settings); ++i) variable_struct_set(self, _settings[i], variable_struct_get(global.settingsoverride, _settings[i]))
 	
 	}, function(me) { wrapamt = (me.boxwidth * me.Scale) - (me.xoff + me.basetextx) })
+		
+	gpu_set_blendmode(bm_add)
+	draw_set_color(c_black)
+	draw_rectangle(x, y, x + dboxargument_width * f, y + dboxargument_height * f, false)
+	gpu_set_blendmode(bm_normal)
 }
 
 heartpos = 0

@@ -114,8 +114,10 @@ switch string_lower(currentdirectory) {
 		var optionnumberfunc = function(option) {emotion = option.value}
 		var optionsleft = []
 		var optionsright = [{name: "0", value: 0, func: optionnumberfunc}]
-		if asset_get_index("spr_face_" + face) != -1
-		repeat (sprite_get_number(asset_get_index("spr_face_" + face)) - 1) {
+		var faceasset = face
+		if !is_real(faceasset) faceasset = asset_get_index("spr_face_" + face)
+		if faceasset != -1
+		repeat (sprite_get_number(faceasset) - 1) {
 			array_push(optionsright, 
 			{ name: string(array_length(optionsright)), value: array_length(optionsright), func: optionnumberfunc }
 			)

@@ -330,12 +330,12 @@ function draw_text_writerstyle(x, y, str = "PLACEHOLDER", darkmode = false, spac
 					backing_col2 = dat.data
 					backing_col1 = dat.data
 			
-					var defaultmode = dat.data == c_white || dat.data == c_black
+					var defaultmode = (dat.data == c_white || dat.data == c_black)
 					if darkbacking {
 						backingalpha = 0.3
 						if defaultmode backingalpha = 1
 					}
-					if darkmode primary_col2 = c_white
+					if darkmode && dat.data != c_black primary_col2 = c_white
 					if defaultmode {
 						backing_col1 = backing_col1_default
 						backing_col2 = backing_col2_default

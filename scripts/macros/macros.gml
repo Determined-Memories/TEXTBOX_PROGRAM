@@ -1,4 +1,5 @@
 #macro FACEBLACKLIST [spr_face_memories]
+#macro Debug:FACEBLACKLIST []
 	
 #macro darkboxtopsprite spr_textbox_top
 #macro darkboxleftsprite spr_textbox_left

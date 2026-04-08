@@ -470,6 +470,13 @@ mtd_wrap = function(value, _min, _max) {
 
 images = [spr_heart_centered]
 
+_automaticallycalculateboxheight = function() {
+	var lines = array_length(string_split_ext(text, ["\n", "&", "#"]))
+	show_debug_message(lines)
+	var stringheight = ((lines) * (spacingheight/Scale)) + (16)
+	boxheight = clamp(stringheight, 70, 0xFFFFFF)
+}
+
 if scr_debug() show_message(global.launch_arguments)
 
 if global.launch_arguments.customargument_settext != -1													text =					 (global.launch_arguments.customargument_settext)
@@ -494,11 +501,4 @@ if global.launch_arguments.customargument_autogenerate != false											scr_ge
 if global.launch_arguments.customargument_autoquit {
 	show_debug_message("AUTOQUITTING.")
 	game_end()
-}
-
-_automaticallycalculateboxheight = function() {
-	var lines = array_length(string_split_ext(text, ["\n", "&", "#"]))
-	show_debug_message(lines)
-	var stringheight = ((lines) * (spacingheight/Scale)) + (16)
-	boxheight = clamp(stringheight, 70, 0xFFFFFF)
 }

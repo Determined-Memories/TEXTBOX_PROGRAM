@@ -38,7 +38,7 @@ function scr_darkbox(x1, y1, x2, y2, size = 2){
 	
 	var frame = 0
 	
-	if global.flag[8] != false frame = cur_jewel / 10
+	if global.flag[8] == false frame = cur_jewel / 10
 	draw_sprite_ext(topleftspr, frame, x1,	 y1,	size,	size, 0, c_white, 1)
 	draw_sprite_ext(topleftspr, frame, x2 + 1, y1,	-size,	size, 0, c_white, 1)
 	draw_sprite_ext(topleftspr, frame, x1,	 y2 + 1, size, -size, 0, c_white, 1)

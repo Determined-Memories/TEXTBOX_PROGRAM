@@ -3,7 +3,6 @@ function scr_darkbox(x1, y1, x2, y2, size = 2){
 	if (!variable_instance_exists(id, "cur_jewel")) cur_jewel = 0
 	if (!variable_global_exists("flag")) {
 		global.flag[9999] = 0 // Sets 9999 Values to 0, as the other 9998 Values get defaulted to Zero.
-		global.flag[8] = true
 	}
 	
 	cur_jewel += 1

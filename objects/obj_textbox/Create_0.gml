@@ -1,3 +1,5 @@
+timerstep = 0
+timerdraw = 0
 debugmode = true
 fixoffsets = false
 
@@ -206,8 +208,13 @@ facespriteinternalnames = {
 		"king": "King",
 		"queen": "Queen",
 		"burgerpants": "Pants [Burger Edition]",
-		"asgore": "Asgore [Sprites Combined]",
+		"asgore": "Asgore Ch1-4 [Sprites Combined]",
+		"asgore_matome": "Asgore Ch5",
+		"asgore_matome_crown": "Asgore Ch5 crown",
 		"sans": "sans [combined]",
+		"pinkspeaker_data": "Pink",
+		"flowery": "Flowery",
+		"n_matome_beach": "Noelle (Beach/Lake)"
 	}
 
 _checkforifblacklisted = function(sprite) {
@@ -312,10 +319,7 @@ scr_drawbox = function(x, y) {
 	facespriteoffset[1]	+= changeyfaceoffpos
 	
 	if sprite_exists(facespr) {
-		xoff += (58 * f)
-		if isfaceasset {
-			draw_sprite_stretched(facespr, emotion, basetextx - 6*f, basetexty - 3*f, 60*f, 60*f)
-		} else draw_sprite_ext(facespr, emotion, basetextx + facespriteoffset[0], basetexty + facespriteoffset[1], f, f, 0, c_white, 1)
+		scr_facerender(emotion, basetextx, basetexty, face, facespr, f, isfaceasset, facespriteoffset)
 	}
 	
 	draw_text_writerstyle(xoff + basetextx, yoff + basetexty, string(text), darkmode, undefined, function(me) {

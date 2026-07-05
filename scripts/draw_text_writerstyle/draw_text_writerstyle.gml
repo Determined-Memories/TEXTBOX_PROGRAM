@@ -56,6 +56,15 @@ function draw_text_writerstyle(x, y, str = "PLACEHOLDER", darkmode = false, spac
 							break case "O": drawcol = c_orange 
 							break case "A": drawcol = #00AEFF 
 							
+							// Chapter 5+
+							break case "a": drawcol = #84F9FF
+							break case "y": drawcol = #FFF8A1
+							break case "g": drawcol = #AEFFBC
+							break case "o": drawcol = #FFAC87
+							break case "s": drawcol = #E2A8FC
+							break case "p": drawcol = make_color_rgb(255, 138, 144)
+							break case "b": drawcol = #86A7FF
+							
 							// CUSTOM
 							break case "[": 
 							i++

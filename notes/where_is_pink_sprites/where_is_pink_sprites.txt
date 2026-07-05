@@ -1,0 +1,3 @@
+Pink uses a Custom Renderer, 
+check scr_facerender for what Sprites are connected to what Indexes
+for just the sprites that exist go into the Sprites Folder for Pink

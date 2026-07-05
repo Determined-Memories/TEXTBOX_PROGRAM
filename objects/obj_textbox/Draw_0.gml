@@ -1,3 +1,4 @@
+timerdraw++
 f = Scale
 
 if is_nan(compilationstartframe) compilationstartframe = 0

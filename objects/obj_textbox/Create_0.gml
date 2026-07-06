@@ -15,6 +15,8 @@ if !script_exists(asset_get_index("camerax")) {
 
 darkboundsoffset = 3 + 4
 lightboundsoffset = 3
+coreoffset = 0
+minimumoffset = 18.5
 
 //function scr_facechoice()
 //{
@@ -246,6 +248,7 @@ scr_generate = function(fname, frames = 1, startframe = 0) {
 	f = Scale
 	boundsoffset = lightboundsoffset
 	if darkmode boundsoffset = darkboundsoffset
+	boundsoffset = max(boundsoffset + coreoffset, minimumoffset)
 	var surfwidth = boxwidth*f + boundsoffset*f*2
 	var surfheight = boxheight*f + boundsoffset*f*2
 	show_debug_message(surfwidth)

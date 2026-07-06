@@ -117,15 +117,19 @@ switch string_lower(currentdirectory) {
 		toptext = "FACES & EMOTION"
 		var optionnumberfunc = function(option) {emotion = option.value}
 		var optionsleft = []
-		var optionsright = [{name: "0", value: 0, func: optionnumberfunc}]
+		var optionsright = []//[{name: "0", value: 0, func: optionnumberfunc}]
 		var faceasset = face
 		if !is_real(faceasset) faceasset = asset_get_index("spr_face_" + face)
-		if faceasset != -1
-		repeat (sprite_get_number(faceasset) - 1) {
-			array_push(optionsright, 
-			{ name: string(array_length(optionsright)), value: array_length(optionsright), func: optionnumberfunc }
-			)
+		
+		repeat max(sprite_exists(faceasset) ? sprite_get_number(faceasset) : 1, 1) {
+			var number = array_length(optionsright)
+			var data = 	{ name: string(number), value: number, func: optionnumberfunc }
+			
+			data.primarycolor = number == emotion ? c_aqua : c_white
+			data.selectedcolor = number == emotion ? #8FFF8C : c_yellow
+			array_push(optionsright, data)
 		}
+		
 		var facesprites = scr_getfacesprites()
 		array_insert(facesprites, 0, {name: "No one", realname: "noone"})
 		for (var i = 0; i < array_length(facesprites); ++i) {

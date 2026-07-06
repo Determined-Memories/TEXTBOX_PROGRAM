@@ -72,7 +72,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "OverlayorUnderlay",
-    "path": "folders/Sprites/Faces/pink/Sprites/OverlayorUnderlay.yy",
+    "name": "OverlayOrUnderlay",
+    "path": "folders/Sprites/Faces/pink/Sprites/OverlayOrUnderlay.yy",
   },
 }

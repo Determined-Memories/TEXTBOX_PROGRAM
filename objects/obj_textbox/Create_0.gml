@@ -412,7 +412,8 @@ scr_drawbox = function(x, y) {
 		for (var i = 0; i < array_length(_settings); ++i) variable_struct_set(self, _settings[i], variable_struct_get(global.settingsoverride, _settings[i]))
 	
 	}, function(me) { wrapamt = (me.boxwidth * me.Scale) - (me.xoff + me.basetextx) })
-		
+	
+	
 	gpu_set_blendmode(bm_add)
 	draw_set_color(c_black)
 	draw_rectangle(x, y, x + dboxargument_width * f, y + dboxargument_height * f, false)

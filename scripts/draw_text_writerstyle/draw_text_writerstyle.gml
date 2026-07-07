@@ -29,7 +29,7 @@ function draw_text_writerstyle(x, y, str = "PLACEHOLDER", darkmode = false, spac
 						i++
 						istart = i
 						letter = string_char_at(_str, i)
-						nextletter = string_char_at(_str, i + 1)
+						var nextletter = string_char_at(_str, i + 1)
 						i++
 						//show_debug_message("Color: {0}", nextletter)
 						switch nextletter {
@@ -57,17 +57,16 @@ function draw_text_writerstyle(x, y, str = "PLACEHOLDER", darkmode = false, spac
 							break case "A": drawcol = #00AEFF 
 							
 							// Chapter 5+
-							break case "a": drawcol = #84F9FF
-							break case "y": drawcol = #FFF8A1
-							break case "g": drawcol = #AEFFBC
-							break case "o": drawcol = #FFAC87
-							break case "s": drawcol = #E2A8FC
-							break case "p": drawcol = make_color_rgb(255, 138, 144)
-							break case "b": drawcol = #86A7FF
+							break case "a": drawcol = #84F9FF // Aqua
+							break case "y": drawcol = #FFF8A1 // Yellow
+							break case "g": drawcol = #AEFFBC // Green
+							break case "o": drawcol = #FFAC87 // Orange
+							break case "s": drawcol = #E2A8FC // Seth
+							break case "p": drawcol = make_color_rgb(255, 138, 144) // Pink
+							break case "b": drawcol = #86A7FF // Blue
 							
 							// CUSTOM
-							
-							break case "[": 
+							break case "[":
 							i++
 							letter = string_char_at(_str, i)
 							nextletter = string_char_at(_str, i + 1)
@@ -227,17 +226,17 @@ function draw_text_writerstyle(x, y, str = "PLACEHOLDER", darkmode = false, spac
 				if variable_struct_exists(___textcodes, nextletter) {
 					method(self, variable_struct_get(___textcodes, nextletter))()
 				} else skipdraw = false
-				switch nextletter {
-				case "s":
-					i++
-					letter = string_char_at(_str, i)
-					var hexcode = string(string_char_at(_str, i + 1)) + string(string_char_at(_str, i + 2))
-					var shaderid = hex_to_number(hexcode) - 1
-					i += 2
-					shader = shaderid
-					if shader == -1 shader = originalshader
-				break
-				}
+				//switch nextletter {
+				//case "s":
+				//	i++
+				//	letter = string_char_at(_str, i)
+				//	var hexcode = string(string_char_at(_str, i + 1)) + string(string_char_at(_str, i + 2))
+				//	var shaderid = hex_to_number(hexcode) - 1
+				//	i += 2
+				//	shader = shaderid
+				//	if shader == -1 shader = originalshader
+				//break
+				//}
 				break
 				default:
 				skipdraw = false

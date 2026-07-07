@@ -18,10 +18,10 @@ function scr_facerender(emotion, x, y, facename, facespr, f, isfaceasset, facesp
 			var tailwag = false
 			var crying = false
 			var sweat = false
-			var tail_index = scr_wrap(floor(timerdraw * anim_spd) % 12, 0, 11)
+			var tail_index = scr_wrap(floor(timerdraw * anim_spd), 0, 11)
 
-			var sweat_index = playing ? scr_wrap(floor(timerdraw * anim_spd) % 3, 0, 2) : 2
-			var cry_index = scr_wrap(floor(timerdraw * anim_spd) % 3, 0, 2)
+			var sweat_index = playing ? scr_wrap(floor(timerdraw * anim_spd), 0, 2) : 2
+			var cry_index = scr_wrap(floor(timerdraw * anim_spd), 0, 2)
 			var sprites = [
 			/*0*/	[spr_pinkspeaker_silhouette, 0, false, false, -1, false], 
 			/*1*/	[spr_pinkspeaker_talk, 0, true, false, -1, false], 

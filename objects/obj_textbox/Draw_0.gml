@@ -161,8 +161,8 @@ switch string_lower(currentdirectory) {
 			if press_u heartpos--
 			if press_r heartxpos++
 			if press_l heartxpos--
-			heartxpos = mtd_wrap(heartxpos, 0, 1)
-			heartpos = mtd_wrap(heartpos, 0, array_length(options) - 1)
+			heartxpos = scr_wrap(heartxpos, 0, 1)
+			heartpos = scr_wrap(heartpos, 0, array_length(options) - 1)
 			heartmoved = (heartpos != heartposprev) || heartxpos != heartxposprev
 			if heartmoved mtd_play(snd_menumove)
 			

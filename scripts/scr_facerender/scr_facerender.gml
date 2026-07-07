@@ -43,7 +43,7 @@ function scr_facerender(emotion, x, y, facename, facespr, f, isfaceasset, facesp
 			/*17*/	[spr_pinkspeaker_angryblush, 0, false, false, -1, false],
 			]
 				
-			var _flag = clamp(floor(emotion) % array_length(sprites), 0, array_length(sprites) - 1)
+			var _flag = clamp(floor(emotion), 0, array_length(sprites) - 1)
 				
 			sprite_index = sprites[_flag][0]
 			tailwag = sprites[_flag][2]

@@ -66,6 +66,7 @@ function draw_text_writerstyle(x, y, str = "PLACEHOLDER", darkmode = false, spac
 							break case "b": drawcol = #86A7FF
 							
 							// CUSTOM
+							
 							break case "[": 
 							i++
 							letter = string_char_at(_str, i)

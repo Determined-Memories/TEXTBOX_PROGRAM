@@ -120,7 +120,7 @@ _basemenuheartmove = function() {
 		}
 	}
 	
-	heartpos = mtd_wrap(heartpos, 0, array_length(options) - 1)
+	heartpos = scr_wrap(heartpos, 0, array_length(options) - 1)
 	
 	//heartpos = heartpos % array_length(options)
 	//heartpos = array_length(options)-1 - (((array_length(options) - 1) - heartpos) % (array_length(options)))
@@ -466,14 +466,6 @@ scr_updateinput()
 
 mtd_play = function(sound) {
 	return audio_play_sound(sound, 600, false)	
-}
-
-mtd_wrap = function(value, _min, _max) {
-	var __maxmod = (_max + 1 - _min)
-	if __maxmod == 0 return 0
-	value = value % __maxmod
-	value = (_max - (_max - value) % __maxmod)
-	return clamp(value, _min, _max)
 }
 
 images = [spr_heart_centered]

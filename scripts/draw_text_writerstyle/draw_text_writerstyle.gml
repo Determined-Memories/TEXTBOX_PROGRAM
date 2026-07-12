@@ -59,7 +59,7 @@ function draw_text_writerstyle(x, y, str = "PLACEHOLDER", darkmode = false, spac
 							// Chapter 5+
 							break case "a": drawcol = #84F9FF // Aqua
 							break case "y": drawcol = #FFF8A1 // Yellow
-							break case "g": drawcol = #AEFFBC // Green
+							break case "g": drawcol = #AEFFBC // (This is Green's)
 							break case "o": drawcol = #FFAC87 // Orange
 							break case "s": drawcol = #E2A8FC // Seth
 							break case "p": drawcol = make_color_rgb(255, 138, 144) // Pink

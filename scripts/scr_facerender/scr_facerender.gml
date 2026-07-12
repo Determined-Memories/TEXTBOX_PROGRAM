@@ -22,25 +22,26 @@ function scr_facerender(emotion, x, y, facename, facespr, f, isfaceasset, facesp
 
 			var sweat_index = playing ? scr_wrap(floor(timerdraw * anim_spd), 0, 2) : 2
 			var cry_index = scr_wrap(floor(timerdraw * anim_spd), 0, 2)
+			
 			var sprites = [
-			/*0*/	[spr_pinkspeaker_silhouette, 0, false, false, -1, false], 
-			/*1*/	[spr_pinkspeaker_talk, 0, true, false, -1, false], 
-			/*2*/	[spr_pinkspeaker_concerned, 0, true, false, -1, false], 
-			/*3*/	[spr_pinkspeaker_tongue, 0, false, false, -1, false], 
-			/*4*/	[spr_pinkspeaker_nya, 1, false, false, -1, false], 
-			/*5*/	[spr_pinkspeaker_nya2, 1, false, false, -1, false], 
-			/*6*/	[spr_pinkspeaker_talk_happy, 16, true, false, -1, false], 
-			/*7*/	[spr_pinkspeaker_angry, 0, false, false, -1, false], 
-			/*8*/	[spr_pinkspeaker_wink, 0, true, false, -1, false], 
-			/*9*/	[spr_pinkspeaker_cry, 0, false, true, -1, false], 
-			/*10*/	[spr_pinkspeaker_sad, 0, false, false, spr_pinkspeaker_sad_end, false], 
-			/*11*/	[spr_pinkspeaker_angry, 0, false, false, -1, true], 
-			/*12*/	[spr_pinkspeaker_happytearful, 1, false, false, spr_pinkspeaker_happytearful_end, false], 
-			/*13*/	[spr_pinkspeaker_happycry, 1, false, false, spr_pinkspeaker_happycry_end, false], 
-			/*14*/	[spr_pinkspeaker_overjoyed, 0, false, true, -1, false], 
-			/*15*/	[spr_pinkspeaker_shocked, 0, false, true, -1, false], 
-			/*16*/	[spr_pinkspeaker_exploded, 0, false, false, -1, false], 
-			/*17*/	[spr_pinkspeaker_angryblush, 0, false, false, -1, false],
+			/*0*/			[spr_pinkspeaker_silhouette, 0, false, false, -1, false], 
+			/*1*/			[spr_pinkspeaker_talk, 0, true, false, -1, false], 
+			/*2*/			[spr_pinkspeaker_concerned, 0, true, false, -1, false], 
+			/*3*/			[spr_pinkspeaker_tongue, 0, false, false, -1, false], 
+			/*4*/			[spr_pinkspeaker_nya, 1, false, false, -1, false], 
+			/*5*/			[spr_pinkspeaker_nya2, 1, false, false, -1, false], 
+			/*6*/			[spr_pinkspeaker_talk_happy, 16, true, false, -1, false], 
+			/*7*/			[spr_pinkspeaker_angry, 0, false, false, -1, false], 
+			/*8*/			[spr_pinkspeaker_wink, 0, true, false, -1, false], 
+			/*9*/			[spr_pinkspeaker_cry, 0, false, true, -1, false], 
+			/*10*/ /*A*/	[spr_pinkspeaker_sad, 0, false, false, spr_pinkspeaker_sad_end, false], 
+			/*11*/ /*B*/	[spr_pinkspeaker_angry, 0, false, false, -1, true], 
+			/*12*/ /*C*/	[spr_pinkspeaker_happytearful, 1, false, false, spr_pinkspeaker_happytearful_end, false], 
+			/*13*/ /*D*/	[spr_pinkspeaker_happycry, 1, false, false, spr_pinkspeaker_happycry_end, false], 
+			/*14*/ /*E*/	[spr_pinkspeaker_overjoyed, 0, false, true, -1, false], 
+			/*15*/ /*F*/	[spr_pinkspeaker_shocked, 0, false, true, -1, false], 
+			/*16*/ /*G*/	[spr_pinkspeaker_exploded, 0, false, false, -1, false], 
+			/*17*/ /*H*/	[spr_pinkspeaker_angryblush, 0, false, false, -1, false],
 			]
 				
 			var _flag = clamp(floor(emotion), 0, array_length(sprites) - 1)
